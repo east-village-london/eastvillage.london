@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>East Village London</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --teal: #00897b;
+      --teal-light: #e0f2f1;
+      --ink: #111111;
+      --ink-soft: #555555;
+      --ink-muted: #999999;
+      --bg: #f8f8f6;
+      --white: #ffffff;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+
+    /* ── Hero ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2.5rem 6rem;
+    }
+
+    .hero {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 2rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 1.75rem;
+    }
+
+    h1 span {
+      color: var(--teal);
+    }
+
+    .tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+
+    .tagline strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--teal);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.875rem 1.75rem;
+      border-radius: 6px;
+      transition: background 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-primary:hover {
+      background: #00796b;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary svg {
+      transition: transform 0.15s ease;
+    }
+
+    .btn-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .open-source-note {
+      font-size: 0.825rem;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ── Pillars ── */
+    .pillars {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 5rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid #e5e5e3;
+      flex-wrap: wrap;
+    }
+
+    .pillar {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .pillar-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-text {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 1.75rem 2.5rem;
+      border-top: 1px solid #e5e5e3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+
+    .footer-location {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    @media (max-width: 480px) {
+      header, main, footer {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .pillars {
+        gap: 2rem;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="wordmark" href="/">East Village London</a>
+  </header>
+
+  <main>
+    <div class="hero">
+
+      <div class="eyebrow">Community Resource</div>
+
+      <h1>Built by residents,<br>for <span>everyone</span>.</h1>
+
+      <p class="tagline">
+        A <strong>community-led, open resource</strong> for people who live in East Village, London —
+        practical knowledge, shared freely, maintained by the neighbourhood.
+      </p>
+
+      <div class="actions">
+        <a class="btn-primary" href="/wiki/">
+          Explore the Wiki
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <span class="open-source-note">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm0 9a5 5 0 0 1-3.9-1.88C4.42 9.67 6.89 9 8 9s3.58.67 3.9 2.12A5 5 0 0 1 8 13z" fill="currentColor"/>
+          </svg>
+          Open source · Anyone can contribute
+        </span>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-label">Community led</div>
+          <p class="pillar-text">Written and maintained by East Village residents. No official body, no agenda.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">Open resources</div>
+          <p class="pillar-text">Everything here is free to read, share, and build on. No paywalls, no sign-ups.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">For all</div>
+          <p class="pillar-text">Renters, owners, newcomers. If you live here, this is for you.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span class="footer-note">eastvillage.london — open &amp; community maintained</span>
+    <span class="footer-location">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3z" fill="currentColor"/>
+      </svg>
+      Stratford, London E20
+    </span>
+  </footer>
+
+</body>
+</html>
