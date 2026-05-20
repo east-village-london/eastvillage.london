@@ -13,3 +13,7 @@ Welcome! This repo is the landing page for [eastvillage.london](https://eastvill
 ## Hosting
 
 Served via GitHub Pages. See the [GitHub Pages docs](https://docs.github.com/en/pages) for deployment details.
+
+## License
+
+[CC BY 4.0](LICENSE) — free to share and adapt with attribution.
